@@ -1,0 +1,63 @@
+There are three components to the exposure time calculator.
+
+Everything lives in /u/holden/ETC/
+The python WSGI code and the supporting data
+along with the templates and JS are all under
+svn control. A fresh svn co will create a 
+directory called expcalc. Currently there is no
+tool to install the code (e.g., no makefile.)
+
+1) The backend IDL code and data.
+This includes the XIDL source tree and a number of files that 
+the ETC needs to compute values.
+
+For XIDL to work, a number of environmental variables need to be 
+defined. The default values are in the file ETC/env-for-xidl.
+The code itself lives in the idl/ subdirectory. 
+
+Beyond the XIDL installation, there is a directory called data
+which contains two sub directories, filters and templates. These contain
+data that are required for the code to work.
+
+This lives in the Data/ subdirectory.
+
+These do not need to live in ETC/, as long as the env-for-idl script
+is properly configured.
+
+2) the python code 
+This lives in wsgi-scripts/ subdirectory.
+
+There are two path requirements.
+a) all of the python dependencies for 
+web_s2n.wsgi must live in the same directory 
+as web_s2n.wsgi.
+b) idl_wrapper lives in a subdirectory of the one
+that hosts env-for-idl
+
+3) mod_wsgi
+This must be install and running in the Apache
+web server, of course.
+
+The configuration is controled in a block in
+/etc/httpd/conf/httpd.conf
+
+Two key configuration variables are in this
+file.
+
+a) WSGISocketPrefix /var/run/wsgi
+
+This means that the WSGI socket will be in
+/var/run, NOT /var/run/wsgi, wsgi is a prefix.
+The details are here 
+http://code.google.com/p/modwsgi/wiki/ConfigurationIssues
+
+b) second there is a configuration block that controls
+the location of the files. This is currently centered
+around /u/holden/ETC. This, of course, could be moved 
+to /var/www/, for example. 
+
+
+
+
+
+

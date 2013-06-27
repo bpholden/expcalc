@@ -1,0 +1,20 @@
+#! /bin/sh
+
+# Set up standard IDL environment, then
+# pass arguments to idl.
+
+# Bash will put the path by which this script was
+# invoked into BASH_SOURCE[0].  Therefore, the
+# parent directory with the environment-setting file
+# is:
+dir=$(dirname $BASH_SOURCE[0])/..
+
+# Get the XIDL environment:
+echo Getting XIDL environment
+. $dir/env-for-xidl
+echo tempdir $TEMPLATE_DIR
+echo filtdir $FILTER_DIR
+echo idlpath $IDL_PATH
+echo input $@
+# And exec idl:
+exec idl "$@"

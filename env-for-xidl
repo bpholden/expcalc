@@ -1,0 +1,61 @@
+
+# Source this from a bash shell.
+
+# . /opt/idl8/bin/idl_setup.bash
+
+# Directory containing the idl executable
+# (Do not use the name IDL_DIR; this is
+# used for other IDL-related purposes.)
+# DIR_OF_IDL=/opt/idl/bin
+
+# Directory containing the root of the ETC tree.
+# ETC_ROOTDIR=/dsk/basil/ETC
+ETC_ROOTDIR=/Users/holden/
+
+export IDLUTILS_DIR=$ETC_ROOTDIR/idl/idlutils
+export IDLSPEC2D_DIR=$ETC_ROOTDIR/idl/idlspec2d
+
+# Note the trailing slash.
+export XIDL_DIR=$ETC_ROOTDIR/idl/xidl/
+
+PATH=${DIR_OF_IDL}:$IDLUTILS_DIR/bin:$IDLSPEC2D_DIR/bin:$PATH
+
+if false ; then
+    # This is the full-blown IDL path.
+    # It takes IDL many seconds to scan it,
+    # if the IDL_DIR and/or ETC_ROOTDIR are
+    # NFS-mounted.
+    IDL_PATH=
+    IDL_PATH=+$IDL_DIR/lib:$IDL_PATH
+    IDL_PATH=+$IDL_DIR/examples:$IDL_PATH
+    IDL_PATH=+$XIDL_DIR:$IDL_PATH
+    IDL_PATH=+$IDLUTILS_DIR/goddard/pro:$IDL_PATH
+    IDL_PATH=+$IDLUTILS_DIR/pro:$IDL_PATH
+    IDL_PATH=+$IDLSPEC2D_DIR/pro:$IDL_PATH
+    IDL_PATH=+pro/:$IDL_PATH
+    export IDL_PATH
+else
+    # This is a carefully-selected IDL path
+    # that has the essential directories for
+    # XIDL and GODDARD stuff.  It will load
+    # much faster than the full-blown IDL path,
+    # if the IDL_DIR and/or ETC_ROOTDIR are
+    # NFS-mounted.
+    IDL_PATH=
+    IDL_PATH=$IDL_DIR/lib:$XIDL_DIR/Obs/Sky/
+    IDL_PATH=$IDL_PATH:$XIDL_DIR/Obs/S2N/
+    IDL_PATH=$IDL_PATH:$XIDL_DIR/Obs/
+    IDL_PATH=$IDL_PATH:$XIDL_DIR/General/
+    IDL_PATH=$IDL_PATH:$IDLUTILS_DIR/goddard/pro/fits/
+    IDL_PATH=$IDL_PATH:$IDLUTILS_DIR/goddard/pro/fits_bintable/
+    IDL_PATH=$IDL_PATH:$IDLUTILS_DIR/goddard/pro/misc/
+    IDL_PATH=$IDL_PATH:$IDLUTILS_DIR/goddard/pro/structure/
+    IDL_PATH=$IDL_PATH:$IDLUTILS_DIR/goddard/pro/math/
+    export IDL_PATH
+fi
+
+# Specific to HIRES and LowRedux:
+export LONGSLIT_DIR=$XIDL_DIR/Spec/Longslit
+# export HIRES_CALIBS='/where/you/put/the/HIRES/calibs'
+export FILTER_DIR=$ETC_ROOTDIR/Data/filters/
+export TEMPLATE_DIR=$ETC_ROOTDIR/Data/templates/
