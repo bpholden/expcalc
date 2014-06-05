@@ -41,7 +41,7 @@ class inst:
                 redshift = 'Redshift',
                 )
 
-        elif name == "esi" or name == "apf":
+        elif name == "esi":
 
             self.paramregexp = dict(
                 mag = '\d+\.?\d*',
@@ -68,6 +68,39 @@ class inst:
                 mtype = 'Mag. Type',
                 redshift = 'Redshift',
                 )
+        elif  name == "apf":
+
+            self.paramregexp = dict(
+                mag = '\d+\.?\d*',
+                binning = '\dx\d',
+                #                spatialbinning = '\d',
+                #                spectralbinning = '\d',
+                #                slitwidth = '\d\.?\d*',
+                slitwidth = '\w',
+                exptime = '\d+\.?\d*',
+                seeing = '(\d\.?\d*|\.\d+)',
+                airmass = '\d+\.?\d*',
+                ffilter = '\w+\.\w+',
+                template = '\w+\.\w+',
+                mtype = '\d',
+                redshift = '(\d\.?\d*|\.\d+)',
+                )
+
+            self.prettyparam = dict(
+                mag = 'Mag',
+                binning = 'CCD Binning',
+                #                spatialbinning = 'Binning in Spatial Pixels',
+                #                spectralbinning = 'Binning in Spectral Pixels',
+                slitwidth = 'Slitwidth',
+                exptime = 'Exp. time',
+                seeing = 'Seeing',
+                airmass = 'Airmass',
+                ffilter = 'Filter',
+                template = 'Template',
+                mtype = 'Mag. Type',
+                redshift = 'Redshift',
+                )
+            
         elif name == "hires":
             self.paramregexp = dict(
                 mag = '\d+\.?\d*',

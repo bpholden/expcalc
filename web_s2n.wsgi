@@ -1,6 +1,5 @@
-from bottle import route, run, debug, template, request, validate, static_file, error, default_app, response
+from bottle import route, run, debug, template, request, static_file, error, default_app, response
 import subprocess as sub
-import re
 import os, os.path, sys
 from optparse import OptionParser
 

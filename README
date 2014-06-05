@@ -1,0 +1,14 @@
+This is a web based interface to the ETC built into XIDL.
+
+The software dependencies are listed in the doc directory.
+Installation in the doc directory talks about how this code is all
+laid out.
+
+The main script is web_s2n.wsgi, as it is mean to run under
+the mod_WSGI interface to Apache.  The last line of the Python
+code must be:
+
+     application = default_app()
+
+Currently, this is deployed via
+/u/holden/ETC/wsgi-scripts/

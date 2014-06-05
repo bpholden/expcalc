@@ -20,7 +20,7 @@ class LConn():
     def __repr__(self):
         return "LConn %s:%d" % (self.host,self.port)
 
-    def post_url(self,url,indict):
+    def post_url(self,url,indict,debug=False):
 
 
         if self.port:
@@ -28,6 +28,9 @@ class LConn():
         else:
             fullurl = "http://%s%s" % (self.host,url)
         params = urllib.urlencode(indict)
+
+        if debug:
+            print fullurl + params
 
         if not self.opener:
             self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
@@ -42,6 +45,15 @@ class LConn():
 
         return retval,''
 
+
+    def binning_opts(self,indict):
+
+        if indict['inst'] == "apf":
+            #spatial by spectral
+            (spatial,spectral) = indict["binning"].split("x")
+            indict["spatialbinning"] = spatial
+            indict["spectralbinning"] = spectral
+            del indict['binning']
 
     def calc_s2n(self,options):
 
@@ -62,11 +74,13 @@ class LConn():
         if sys == 'Vega':
             indict['mtype']=1
 
+        self.binning_opts(indict)
+
         if options.debug:
             url = "/gen_inst_s2n"
         else:
             url = "/web_s2n/gen_inst_s2n"
-        retval,errmsg = self.post_url(url,indict)
+        retval,errmsg = self.post_url(url,indict,debug=options.debug)
         return retval,errmsg
 
 

@@ -7,41 +7,41 @@ make_kast_form.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/expcalc/!svn/ver/35/views/make_kast_form.tpl
+/expcalc/!svn/ver/38/views/make_kast_form.tpl
 END
 make_apf_form.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 44
-/expcalc/!svn/ver/35/views/make_apf_form.tpl
+/expcalc/!svn/ver/42/views/make_apf_form.tpl
 END
 make_lris_form.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/expcalc/!svn/ver/33/views/make_lris_form.tpl
+/expcalc/!svn/ver/38/views/make_lris_form.tpl
 END
 make_hires_form.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/expcalc/!svn/ver/35/views/make_hires_form.tpl
+/expcalc/!svn/ver/38/views/make_hires_form.tpl
 END
 layout.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/expcalc/!svn/ver/32/views/layout.tpl
+/expcalc/!svn/ver/42/views/layout.tpl
 END
 make_deimos_form.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 47
-/expcalc/!svn/ver/35/views/make_deimos_form.tpl
+/expcalc/!svn/ver/42/views/make_deimos_form.tpl
 END
 make_esi_form.tpl
 K 25
 svn:wc:ra_dav:version-url
 V 44
-/expcalc/!svn/ver/35/views/make_esi_form.tpl
+/expcalc/!svn/ver/38/views/make_esi_form.tpl
 END

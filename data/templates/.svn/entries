@@ -26,6 +26,40 @@ holden
 
 4d739279-f23f-6a8f-e60c-90fb611bee6c
 
+s0_template.fits
+file
+
+
+
+
+2013-05-24T18:58:07.000000Z
+677ed3493c29ef5db61e1a182b43b04b
+2013-05-24T18:58:53.942120Z
+29
+holden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20160
+
 elliptical_template.fits
 file
 
@@ -60,16 +94,16 @@ holden
 
 20160
 
-s0_template.fits
+K0V_pickles_32.fits
 file
+36
 
 
 
-
-2013-05-24T18:58:07.000000Z
-677ed3493c29ef5db61e1a182b43b04b
-2013-05-24T18:58:53.942120Z
-29
+2013-06-27T21:53:15.000000Z
+0d99968bcdcc536966b5e64e21824cb3
+2013-07-01T22:50:44.678176Z
+36
 holden
 
 
@@ -92,7 +126,7 @@ holden
 
 
 
-20160
+23040
 
 F5V_pickles_16.fits
 file
@@ -196,40 +230,6 @@ holden
 
 23040
 
-K5V_pickles_36.fits
-file
-
-
-
-
-2013-05-24T18:58:07.000000Z
-3c6093f5c83ba69aaf1acb311068f328
-2013-05-24T18:58:53.942120Z
-29
-holden
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-23040
-
 starb1_template.fits
 file
 
@@ -264,14 +264,14 @@ holden
 
 20160
 
-starb2_template.fits
+K5V_pickles_36.fits
 file
 
 
 
 
 2013-05-24T18:58:07.000000Z
-ee973d0869ee820e367ed647ddf302de
+3c6093f5c83ba69aaf1acb311068f328
 2013-05-24T18:58:53.942120Z
 29
 holden
@@ -296,7 +296,41 @@ holden
 
 
 
-20160
+23040
+
+A0V_pickles_9.fits
+file
+36
+
+
+
+2013-06-27T21:53:15.000000Z
+a9d41f46d40f9301b0fb3730b23bfcb1
+2013-07-01T22:50:44.678176Z
+36
+holden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23040
 
 M5V_pickles_44.fits
 file
@@ -332,14 +366,14 @@ holden
 
 23040
 
-bulge_template.fits
+starb2_template.fits
 file
 
 
 
 
 2013-05-24T18:58:07.000000Z
-93e26b47faea1d9d3e1a94103a4d1c5d
+ee973d0869ee820e367ed647ddf302de
 2013-05-24T18:58:53.942120Z
 29
 holden
@@ -364,7 +398,7 @@ holden
 
 
 
-17280
+20160
 
 starb3_template.fits
 file
@@ -399,6 +433,40 @@ holden
 
 
 20160
+
+bulge_template.fits
+file
+
+
+
+
+2013-05-24T18:58:07.000000Z
+93e26b47faea1d9d3e1a94103a4d1c5d
+2013-05-24T18:58:53.942120Z
+29
+holden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17280
 
 starb4_template.fits
 file

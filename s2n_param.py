@@ -45,7 +45,7 @@ def parse_request(value,regexp,name):
         msg = "Inappropriate value for the input parameter %s" % name
 
 
-    print cleanvalue,msg
+        #    print cleanvalue,msg
     return cleanvalue,msg
 
 def paramandvals(param,paramval):
@@ -73,6 +73,7 @@ def build_exec_str(com,paramregexp,prettyparam,params):
     output = dict(wave = [],
                   s2n = [],
                   obj = [],
+                  objperwavesec = [],
                   noise = [],
                   sky = [],
                   com = "",
@@ -84,9 +85,9 @@ def build_exec_str(com,paramregexp,prettyparam,params):
 
 
     for param in prettyparam.keys():
-        print "build_exec_str",param, prettyparam[param]
+        #        print "build_exec_str",param, prettyparam[param]
         if param in params.keys() and params[param]:
-            print "build_exec_str",param, prettyparam[param],params[param]
+            #    print "build_exec_str",param, prettyparam[param],params[param]
             paramval,output['msg'] = parse_request(params[param],paramregexp[param],prettyparam[param])
 
             if param == 'dichroic':

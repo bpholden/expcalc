@@ -3,17 +3,23 @@ svn:wc:ra_dav:version-url
 V 35
 /expcalc/!svn/ver/29/Data/templates
 END
+elliptical_template.fits
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/expcalc/!svn/ver/29/Data/templates/elliptical_template.fits
+END
 s0_template.fits
 K 25
 svn:wc:ra_dav:version-url
 V 52
 /expcalc/!svn/ver/29/Data/templates/s0_template.fits
 END
-elliptical_template.fits
+K0V_pickles_32.fits
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/expcalc/!svn/ver/29/Data/templates/elliptical_template.fits
+V 55
+/expcalc/!svn/ver/36/Data/templates/K0V_pickles_32.fits
 END
 F5V_pickles_16.fits
 K 25
@@ -33,23 +39,17 @@ svn:wc:ra_dav:version-url
 V 55
 /expcalc/!svn/ver/29/Data/templates/G5V_pickles_27.fits
 END
-K5V_pickles_36.fits
-K 25
-svn:wc:ra_dav:version-url
-V 55
-/expcalc/!svn/ver/29/Data/templates/K5V_pickles_36.fits
-END
 starb1_template.fits
 K 25
 svn:wc:ra_dav:version-url
 V 56
 /expcalc/!svn/ver/29/Data/templates/starb1_template.fits
 END
-M5V_pickles_44.fits
+K5V_pickles_36.fits
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/expcalc/!svn/ver/29/Data/templates/M5V_pickles_44.fits
+/expcalc/!svn/ver/29/Data/templates/K5V_pickles_36.fits
 END
 starb2_template.fits
 K 25
@@ -57,11 +57,17 @@ svn:wc:ra_dav:version-url
 V 56
 /expcalc/!svn/ver/29/Data/templates/starb2_template.fits
 END
-bulge_template.fits
+M5V_pickles_44.fits
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/expcalc/!svn/ver/29/Data/templates/bulge_template.fits
+/expcalc/!svn/ver/29/Data/templates/M5V_pickles_44.fits
+END
+A0V_pickles_9.fits
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/expcalc/!svn/ver/36/Data/templates/A0V_pickles_9.fits
 END
 starb3_template.fits
 K 25
@@ -69,23 +75,29 @@ svn:wc:ra_dav:version-url
 V 56
 /expcalc/!svn/ver/29/Data/templates/starb3_template.fits
 END
+bulge_template.fits
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/expcalc/!svn/ver/29/Data/templates/bulge_template.fits
+END
 starb4_template.fits
 K 25
 svn:wc:ra_dav:version-url
 V 56
 /expcalc/!svn/ver/29/Data/templates/starb4_template.fits
 END
-B5V_pickles_6.fits
-K 25
-svn:wc:ra_dav:version-url
-V 54
-/expcalc/!svn/ver/29/Data/templates/B5V_pickles_6.fits
-END
 starb5_template.fits
 K 25
 svn:wc:ra_dav:version-url
 V 56
 /expcalc/!svn/ver/29/Data/templates/starb5_template.fits
+END
+B5V_pickles_6.fits
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/expcalc/!svn/ver/29/Data/templates/B5V_pickles_6.fits
 END
 starb6_template.fits
 K 25

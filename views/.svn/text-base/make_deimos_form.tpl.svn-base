@@ -9,7 +9,7 @@
       <li><a href="kast">Kast</a></li>
       <li ><a href="lris">LRIS</a></li>
       <li><a href="esi">ESI</a></li>
-      <li><a href="apf">APF</a></li>
+      <li><a href="apf">Levy on the APF</a></li>
     </ul>
   </div>
 </div>
@@ -30,7 +30,9 @@
       <tr class>
 	<td><label>Grating: </label><select name="grating"
 	  class="singleselect input-medium" id="grating">
-	  <option value="600">600</option><option value="1200">1200</option></select>
+	  <option value="600">600</option>
+	  <option value="900">900</option>
+	  <option value="1200">1200</option></select>
 	</td>
 	<td><label>Slitwidth:</label> <select name="slitwidth"
 	  class="singleselect input-medium" id="slitwidth">
@@ -125,9 +127,10 @@
 
   <p>This tool calculates the expected counts and signal to noise for
   a point source using the DEIMOS spectrograph.  Currently, the user
-  can only select two gratings at a fixed number of tilts.  As more
+  can only select three gratings at a fixed number of tilts.  As more
   data on the throughput of the instrument become available, more
-  options will be added.</p>
+  options will be added. The throughput measurements come from the
+  data on the DEIMOS web pages at Keck Observatory</p>
 
   <p>The input spectrum is one of the templates normalized by the
  specified AB magnitude in the specified filter. The total flux of the

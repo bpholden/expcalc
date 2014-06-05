@@ -9,7 +9,7 @@
       <li><a href="kast">Kast</a></li>
       <li ><a href="lris">LRIS</a></li>
       <li><a href="deimos">DEIMOS</a></li>
-      <li><a href="apf">APF</a></li>
+      <li><a href="apf">Levy on the APF</a></li>
     </ul>
   </div>
 </div>

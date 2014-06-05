@@ -9,7 +9,7 @@
       <li><a href="esi">ESI</a></li>
       <li><a href="hires">Hires</a></li>
       <li><a href="deimos">DEIMOS</a></li>
-      <li><a href="apf">APF</a></li>
+      <li><a href="apf">Levy on the APF</a></li>
     </ul>
   </div>
 </div>

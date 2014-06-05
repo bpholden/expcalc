@@ -1,10 +1,10 @@
-%rebase layout title='APF Exposure Time Calculator'
+%rebase layout title='Levy on the APF Exposure Time Calculator'
 <div class="container">
 <div class="navbar">
   <div class="navbar-inner">
     <a class="brand" href="#">UCO/Lick Obs ETCs</a>
     <ul class="nav">
-      <li class="active"><a href="apf">APF</a></li>
+      <li class="active"><a href="apf">Levy on the APF</a></li>
       <li ><a href="hires">Hires</a></li>
       <li><a href="esi">ESI</a></li>
       <li><a href="kast">Kast</a></li>
@@ -15,7 +15,7 @@
 </div>
 
 <div class="row">
-  <h1> APF Exposure Time Calculator </h1>
+  <h1>Levy on the APF Exposure Time Calculator </h1>
 </div>
 <form id="gen_s2n" method="post" action="gen_inst_s2n" class="form-stacked">
 <table border="1" class="table span12">
@@ -32,19 +32,35 @@
 
       <td><label>Slitwidth:</label>
 	<select name="slitwidth" class="singleselect" id="slitwidth">
-	<option value="1.0">1.0 arcsec</option>
-	<option value="2.0">2.0 arcsec</option>
+	<option value="B">2.0 by 8.0 arcsec Decker B</option>
+	<option value="M">1.0  by 8.0 arcsec Decker M</option>
+	<option value="S">0.75  by 8.0 arcsec Decker S</option>
+	<option value="N">0.5  by 8.0 arcsec Decker N</option>
 	  
       </select>
     </td>
-    <td><label>Binning:</label>
-      <select name="binning" class="singleselect" id="binning">
-	<option value="2x1">2x1 pixels</option>
-	<option value="1x1">1x1 pixels</option>
-	<option value="2x2">2x2 pixels</option>
-	<option value="3x1">3x1 pixels</option>
-      </select>
-      <p>Spatial by Spectral	</p>
+    <!-- <td><label>Binning:</label> -->
+    <!--   <select name="spatialbinning" class="singleselect span2" id="binning"> -->
+    <!-- 	<option value="1">1 spatial pix</option> -->
+    <!-- 	<option value="2">2 spatial pix</option> -->
+    <!-- 	<option value="3">3 spatial pix</option> -->
+    <!-- 	<option value="4">4 spatial pix</option> -->
+    <!--   </select> -->
+    <!--   <select name="spectralbinning" class="singleselect span2" id="binning"> -->
+    <!-- 	<option value="1">1 spectral pix</option> -->
+    <!-- 	<option value="2">2 spectral pix</option> -->
+    <!-- 	<option value="3">3 spectral pix</option> -->
+    <!-- 	<option value="4">4 spectral pix</option> -->
+    <!--   </select> -->
+	<td><label>Binning:</label> <select name="binning"
+	  class="singleselect input-medium" id="binning">
+	  <option value="1x1">1x1 pixels</option>
+	  <!-- <option value="2x2">2x2 pixels</option> -->
+	  <!-- <option value="4x4">4x4 pixels</option>	     -->
+	  </select>
+	  <p> Spatial by spectral.</p>
+	</td>
+
     </td>
     <td><label class="fieldlabel">Exp. Time (seconds):</label>
       <input type="text" name="exptime" class="required number" id="form_exptime" value="1200.0" size="6"/><br/>
@@ -113,7 +129,8 @@ name="submitbutton" value="Return csv table for exposure"/>
 </div>
 <div class="modal-body">
   <p>This tool calculates the expected counts and signal to noise for a point source
-  using the APF spectrograph. </p>
+  using the APF spectrograph. The throughput measurements are from a 8 by 8 arcsecond 
+  aperture. The data are from January of 2014.</p>
 
 <p>The input spectrum is one of the templates normalized by the
  specified AB magnitude in the specified filter.  The total flux of
