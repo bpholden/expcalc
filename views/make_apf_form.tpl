@@ -32,11 +32,13 @@
 
       <td><label>Slitwidth:</label>
 	<select name="slitwidth" class="singleselect" id="slitwidth">
+	<option value="W">1.0 by 3.0 arcsec Decker W</option>
+	<option value="T">2.0  by 3.0 arcsec Decker T</option>
 	<option value="B">2.0 by 8.0 arcsec Decker B</option>
 	<option value="M">1.0  by 8.0 arcsec Decker M</option>
 	<option value="S">0.75  by 8.0 arcsec Decker S</option>
 	<option value="N">0.5  by 8.0 arcsec Decker N</option>
-	  
+	<option value="O">8.0  by 8.0 arcsec Decker O</option>	  
       </select>
     </td>
     <!-- <td><label>Binning:</label> -->
@@ -140,7 +142,7 @@ name="submitbutton" value="Return csv table for exposure"/>
  by the seeing parameter. For APF, the slit depends on which Decker
  is used.</p>
   
-  <p>The output data are given in units of per resolution element.</p>
+  <p>The output data are given in units of per pixel.</p>
 
 </div>
 

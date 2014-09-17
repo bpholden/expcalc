@@ -140,7 +140,7 @@
  by the seeing parameter.  For DEIMOS the slit is assumed to be 10
  arcseconds in length.</p>
   
-  <p>The output data are given in units of per resolution element.</p>
+  <p>The output data are given in units of per pixel.</p>
 
  </div>
 

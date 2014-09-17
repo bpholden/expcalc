@@ -145,7 +145,7 @@ class="form-stacked">
  by the seeing parameter. For KAST the slit is 120 arcseconds in
  length.</p>
   
-  <p>The output data are given in units of per resolution element.</p>
+  <p>The output data are given in units of per pixel.</p>
   
 </div>
 

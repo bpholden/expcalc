@@ -152,7 +152,7 @@ class="form-stacked">
  target is assumed to be a point source with a PSF FWHM as specified
  by the seeing parameter. </p>
   
-  <p>The output data are given in units of per resolution element.</p>
+  <p>The output data are given in units of per pixel.</p>
   
 </div>
 

@@ -125,7 +125,7 @@
  by the seeing parameter. For ESI, the slit is 20 arcseconds in
  length.</p>
   
-  <p>The output data are given in units of per resolution element.</p>
+  <p>The output data are given in units of per pixel.</p>
 
 </div>
 

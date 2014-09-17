@@ -127,7 +127,7 @@ name="submitbutton" value="Return csv table for exposure"/>
  by the seeing parameter. For HIRES, the slit depends on which Decker
  is used.</p>
   
-  <p>The output data are given in units of per resolution element.</p>
+  <p>The output data are given in units of per pixel.</p>
 
 </div>
 
