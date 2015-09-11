@@ -79,6 +79,8 @@ def build_exec_str(com,paramregexp,prettyparam,params):
                   dich = "",
                   msg = '',
                   errormsg = '',
+                  i2counts = None,
+                  exp = None,
 
         )
 

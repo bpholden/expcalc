@@ -5,8 +5,13 @@ def get_filters():
         "sdss_g.dat",
         "sdss_i.dat",
         "sdss_u.dat",
-        "sdss_z.dat"]
-    fabbr = ["r","g","i","u","z"]
+        "sdss_z.dat",
+        "Buser_B.dat",
+        "Buser_V.dat",
+        "Cousins_R.dat",
+        "Cousins_I.dat"
+         ]
+    fabbr = ["r","g","i","u","z","B","V","R","I"]
     return(filters,fabbr)
 
 def get_templates():
