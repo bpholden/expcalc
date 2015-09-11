@@ -68,7 +68,7 @@
       <input type="text" name="exptime" class="required number" id="form_exptime" value="1200.0" size="6"/><br/>
     </td>	
     <td><label class="fieldlabel">Mag</label>
-      <input type="text" name="mag" class="required number" id="form_mag" value="13.0" size="4"/><br/>
+      <input type="text" name="mag" class="required number" id="form_mag" value="9.0" size="4"/><br/>
       <select name="ffilter" id="ffilter"  class="singleselect input-mini">
 % for i,f in enumerate(filters):
 	<option value="{{f}}">{{fabbr[i]}}</option>   

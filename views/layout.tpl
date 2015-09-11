@@ -47,6 +47,9 @@
   </div>
 </div>
 <div class="row ">
+  <div id="expmeterdiv" class="span2"></div>
+</div>
+<div class="row ">
   <div   id="s2n" class="span11" style="width: 1000px"></div>
 </div>
 <div class="row ">

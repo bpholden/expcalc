@@ -1,3 +1,9 @@
+function decide(exp) {
+    $("#expmeterdiv").hide();
+    if (exp != null) {
+	$("#expmeterdiv").show();
+    }
+}
 
 function plotoptions(chart,resp) {
     var markings = [];
@@ -58,7 +64,7 @@ function showRequest(formData, jqForm, options) {
     var queryString = $.param(formData); 
     //      alert("started here!");
     console.log('About to submit: \n\n' + queryString); 
-    hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview"]);
+    hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview","#expmeterdiv"]);
     $("#bysy_indicator").show();
     
     return true; 
@@ -72,23 +78,24 @@ function showResponse(resp, statusText, xhr, $form)  {
     var bigdw = 2000;
     var smalldw = 1000;
     $("#bysy_indicator").hide();
-    
-    //      $(".btn").button("enable");
-
     if (resp.errormsg) {
-//        console.log(resp.errormsg)
         alert(resp.errormsg)
-// here we catch error messages from the server.
     } else {
         if (resp.msg) {
 	    alert(resp.msg)
         }
-	// the above hides the busy indicator that is shown in the callback for the Ajax submission call
-	// $("#datatabdiv").html(resp.obj);
+	if (resp.exp != null) {
+	    var t = parseFloat(resp.exp);
+	    if ( t <= 0) {
+		resp.exp = null;
+	    } else {
+		resp.exp = [resp.exp];
+	    }
+	}
+	console.log(resp);
 	Highcharts.setOptions({
             colors: ['#6AF9C4', '#FFF263', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655' ]
 	});
-	// var max_obj = find_max(resp.obj,resp.sky);
 	var max_obj = null;
 	// the s2n chart is built first
         var ps2n = new Highcharts.Chart({
@@ -235,6 +242,21 @@ function showResponse(resp, statusText, xhr, $form)  {
 	});
 	    
         $("#ctstabdiv").hide(); // Once more, but with feeling
+	$("#expmeterdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="expmeter"></table>');
+	decide(resp.exp);
+	$("#expmeter").dataTable({
+	    "aoColumns" : [
+		{ "sTitle": "Exposure Meter" },
+	    ],
+	    "aaData" : resp.exp,
+	    "bPaginate" : false,
+	    "bFilter" : false,
+	    "bInfo" : false,
+	    "bSort" : false,
+	    "bLengthChange" : false,
+	    "bAutoWidth" : false,
+	    
+	});
 	showify(["#ctsbtn","#s2n","#ctstabbtn"])
     };
 };
@@ -252,7 +274,7 @@ $(document).ready(function(){
     $("#gen_s2n").ajaxForm(options);
     // $("#gen_s2n").validate();
 
-    hidify(["#ctsbtn","#ctstabbtn","#s2nbtn","#cvsbtn"]);
+    hidify(["#ctsbtn","#ctstabbtn","#s2nbtn","#cvsbtn","#expmeterdiv"]);
 
     $("#ctsbtn").click(function () {
 	hidify(["#ctstabdiv","#ctsbtn","#s2n","#s2noverview","#cvsbtn"]);
@@ -280,7 +302,7 @@ $(document).ready(function(){
 
     $("#gen_s2n").change( function () {
 	hidify(["#ctsbtn","#ctstabbtn","#s2nbtn","#cvsbtn"]);	
-	hidify(["#ctstabdiv","#cts","#s2n"]);
+	hidify(["#ctstabdiv","#cts","#s2n","#expmeterdiv"]);
     });
     
     $("#disp").tooltip({
