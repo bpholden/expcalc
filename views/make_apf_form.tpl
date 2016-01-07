@@ -57,8 +57,8 @@
 	<td><label>Binning:</label> <select name="binning"
 	  class="singleselect input-medium" id="binning">
 	  <option value="1x1">1x1 pixels</option>
-	  <!-- <option value="2x2">2x2 pixels</option> -->
-	  <!-- <option value="4x4">4x4 pixels</option>	     -->
+	  <option value="2x2">2x2 pixels</option> 
+	  <option value="4x4">4x4 pixels</option>
 	  </select>
 	  <p> Spatial by spectral.</p>
 	</td>
