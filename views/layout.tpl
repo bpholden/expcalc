@@ -3,7 +3,6 @@
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title>{{title}}</title>
-    <!-- <script type="text/javascript" src="javascript/alljs.min.js"></script> -->
     <script type="text/javascript" src="javascript/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="javascript/jquery.form.js"></script>
     <script type="text/javascript" src="javascript/jquery.validate.min.js"></script>
