@@ -1,6 +1,6 @@
 function decide(exp) {
     $("#expmeterdiv").hide();
-    if (exp != null) {
+    if (exp !== null) {
 	$("#expmeterdiv").show();
     }
 }
@@ -68,9 +68,7 @@ function showRequest(formData, jqForm, options) {
     $("#bysy_indicator").show();
     
     return true; 
-};
-
-
+}
 
 // a whole lot of work happens in this function
 function showResponse(resp, statusText, xhr, $form)  { 
@@ -79,12 +77,12 @@ function showResponse(resp, statusText, xhr, $form)  {
     var smalldw = 1000;
     $("#bysy_indicator").hide();
     if (resp.errormsg) {
-        alert(resp.errormsg)
+        alert(resp.errormsg);
     } else {
         if (resp.msg) {
-	    alert(resp.msg)
+	    alert(resp.msg);
         }
-	if (resp.exp != null) {
+	if (resp.exp !== null) {
 	    var t = parseFloat(resp.exp);
 	    if ( t <= 0) {
 		resp.exp = null;
@@ -147,7 +145,7 @@ function showResponse(resp, statusText, xhr, $form)  {
             },
 	    series : [{ name : 's2n',
                         data : resp.s2n,
-                        color: 'rgba(223, 83, 83, .5)',
+                        color: 'rgba(223, 83, 83, .5)'
 		      }]
         });
 	// now we build the cts chart
@@ -172,7 +170,7 @@ function showResponse(resp, statusText, xhr, $form)  {
                 startOnTick: false,
                 endOnTick: false,
                 showLastLabel:true,
-                gridLineWidth: 1,
+                gridLineWidth: 1
             },
 	    yAxis: {
                 title: {
@@ -234,11 +232,11 @@ function showResponse(resp, statusText, xhr, $form)  {
 		{ "sTitle": "Obj (Cts)" },
 		{ "sTitle": "Sky (Cts)" },
 		{ "sTitle": "RN (Cts)" },
-		{ "sTitle": "S/N" },
+		{ "sTitle": "S/N" }
 	    ],
 	    "aaData" : resp.cts,
 	    "bPaginate" : false,
-	    "bFilter" : false,
+	    "bFilter" : false
 	});
 	    
         $("#ctstabdiv").hide(); // Once more, but with feeling
@@ -246,7 +244,7 @@ function showResponse(resp, statusText, xhr, $form)  {
 	decide(resp.exp);
 	$("#expmeter").dataTable({
 	    "aoColumns" : [
-		{ "sTitle": "Exposure Meter" },
+		{ "sTitle": "Exposure Meter" }
 	    ],
 	    "aaData" : resp.exp,
 	    "bPaginate" : false,
@@ -254,12 +252,12 @@ function showResponse(resp, statusText, xhr, $form)  {
 	    "bInfo" : false,
 	    "bSort" : false,
 	    "bLengthChange" : false,
-	    "bAutoWidth" : false,
+	    "bAutoWidth" : false
 	    
 	});
-	showify(["#ctsbtn","#s2n","#ctstabbtn"])
-    };
-};
+	showify(["#ctsbtn","#s2n","#ctstabbtn"]);
+    }
+}
 
 $(document).ready(function(){
 
