@@ -1,21 +1,24 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-    <title>{{title}}</title>
-    <!-- <script type="text/javascript" src="javascript/alljs.min.js"></script> -->
-    <script type="text/javascript" src="javascript/jquery-1.8.2.min.js"></script>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>{{title}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="javascript/jquery-1.8.2.min.js"></script> -->
     <script type="text/javascript" src="javascript/jquery.form.js"></script>
     <script type="text/javascript" src="javascript/jquery.validate.min.js"></script>
     <script type="text/javascript" src="javascript/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/bootstrap-modal.js"></script>
-    <script type="text/javascript" src="javascript/highcharts.js"></script>
-    <script type="text/javascript" src="javascript/doublespec_plot.js"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascript/c3.js"></script>
+    <script type="text/javascript" src="javascript/doublespec_plot_c3.js"></script>
+
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 <link rel="stylesheet" href="css/busy.css">
+<link rel="stylesheet" href="css/c3.min.css">
 
 <style type="text/css">
 #gen_s2n { width: 1000px; }
@@ -27,6 +30,7 @@
 
 </head>
 <body>
+
 %include
 
 <div class="row">
@@ -47,6 +51,9 @@
   </div>
 </div>
 <div class="row ">
+  <div id="expmeterdiv" class="span2"></div>
+</div>
+<div class="row ">
   <div   id="s2n" class="span11" style="width: 1000px"></div>
 </div>
 <div class="row ">
@@ -61,5 +68,6 @@
 
  <hr>
  <p>Email comments, questions to <email>holden@ucolick.org</email></p>
+    
 </body>
 </html>
