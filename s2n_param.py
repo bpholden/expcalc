@@ -28,9 +28,18 @@ def parse_return(output,idlout):
 
     for key in ['s2n','sky','obj','noise']:
         temp = []
+        jtemp = []
+        jkey = "j%s" % (key)
         for i,wv in enumerate(output['wave']):
             temp.append([float(wv),float(output[key][i])])
+            jtemp.append(float(output[key][i]))
         output[key] = temp
+        output[jkey] = jtemp
+        
+    nwave = []
+    for wv in output['wave']:
+        nwave.append(float(wv))
+    output['wave']=nwave
 
     return(output)
 
