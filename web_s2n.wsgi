@@ -93,6 +93,19 @@ def apf():
                       )
     return output
 
+@route('/testapf')
+def testapf():
+    
+    filters,fabbr = templates_filters.get_filters()
+    templates,tabbr = templates_filters.get_templates()
+    output = template('make_testapf_form',inst="apf",
+                      filters = filters,
+                      fabbr = fabbr,
+                      tabbr = tabbr,
+                      templates = templates	      
+                      )
+    return output
+
 @route('/hires')
 def hires():
     
