@@ -2,6 +2,20 @@ import subprocess as sub
 import re
 import os, os.path
 
+
+def bad_obj(objcts):
+    bad = False
+    nbad = 0
+    print objcts
+    for pair in objcts:
+        wv,oc = pair
+        if oc < 0:
+            nbad += 1
+        if nbad > 5:
+            bad = True
+    print bad
+    return bad
+
 def parse_return(output,idlout):
 
     lines = idlout.splitlines()
@@ -40,6 +54,10 @@ def parse_return(output,idlout):
     for wv in output['wave']:
         nwave.append(float(wv))
     output['wave']=nwave
+
+    if bad_obj(output['obj']):
+        output["errormsg"] = "The selected filter and template do not overlap. Please select another filter, another template, or redshift the template. "
+        
 
     return(output)
 
