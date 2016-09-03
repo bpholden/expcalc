@@ -138,12 +138,13 @@ class="form-stacked">
   of the instrument become available, more options will be added.</p>
 
 <p>The input spectrum is one of the templates normalized by the
- specified AB magnitude in the specified filter.  The total flux of
- the object specified by the user will be reduced to account for slit
- losses based on the specified slit width, height, and seeing.  The
- target is assumed to be a point source with a PSF FWHM as specified
- by the seeing parameter. For KAST the slit is 120 arcseconds in
- length.</p>
+ specified AB or Vega magnitude in the specified filter. A flat
+ template means that the flux  is distributed as either flat in
+ frequency or the spectrum of Vega. The total flux of the object
+ specified by the user will be reduced to account for slit losses
+ based on the specified slit width, height, and seeing.  The target is
+ assumed to be a point source with a PSF FWHM as specified by the
+ seeing parameter. For KAST the slit is 120 arcseconds in length.</p>
   
   <p>The output data are given in units of per pixel.</p>
   
