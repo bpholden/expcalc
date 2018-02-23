@@ -33,6 +33,7 @@
 	  <option value="600">600</option>
 	  <option value="900">900</option>
 	  <option value="1200">1200</option></select>
+	  <option value="1200B">1200B</option></select>
 	</td>
 	<td><label>Slitwidth:</label> <select name="slitwidth"
 	  class="singleselect input-medium" id="slitwidth">

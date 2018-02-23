@@ -131,7 +131,7 @@ class inst:
         elif name =="deimos":
 
             self.paramregexp = dict(
-                grating = '\d+',
+                grating = '\d+\w?',
                 mag = '\d+\.?\d*',
                 cwave = '\d+\.?\d*',
                 binning = '\dx\d',
