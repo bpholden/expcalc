@@ -30,9 +30,9 @@
       <tr class>
 	<td><label>Grating: </label><select name="grating"
 	  class="singleselect input-medium" id="grating">
-	  <option value="600">600</option>
-	  <option value="900">900</option>
-	  <option value="1200">1200</option></select>
+	  <option value="600Z">600ZD</option>
+	  <option value="900Z">900ZD</option>
+	  <option value="1200G">1200G</option>
 	  <option value="1200B">1200B</option></select>
 	</td>
 	<td><label>Slitwidth:</label> <select name="slitwidth"
