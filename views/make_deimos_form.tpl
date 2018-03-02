@@ -128,10 +128,12 @@
 
   <p>This tool calculates the expected counts and signal to noise for
   a point source using the DEIMOS spectrograph.  Currently, the user
-  can only select three gratings at a fixed number of tilts.  As more
-  data on the throughput of the instrument become available, more
-  options will be added. The throughput measurements come from the
-  data on the DEIMOS web pages at Keck Observatory</p>
+  can select two gratings, the 600 and the 900, at a fixed number of
+  tilts. For the 1200 line gratings, the throughput is averaged over
+  all tilts to provide a single curve for the spectrometer. Values
+  outside of those tabulated are extrapolated. The throughput
+  measurements come from the data on the DEIMOS web pages at Keck
+  Observatory</p>
 
   <p>The input spectrum is one of the templates normalized by the
  specified AB or Vega magnitude in the specified filter. A flat
