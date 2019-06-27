@@ -122,7 +122,7 @@ def hires():
 
 @route('/gen_inst_s2n',method='ANY')
 def gen_inst_s2n():
-    instr = inst()
+    instr = Inst()
     instr = instr.make(request.params['inst'])
 
     if devel:
@@ -141,7 +141,7 @@ def gen_inst_s2n():
 @route('/tab_s2n',method='GET')
 def tab_s2n():
 
-    instr = inst()
+    instr = Inst()
     instr = instr.make(request.query.inst)
     com,output = build_exec_str(instr.com,instr.paramregexp,instr.prettyparam,request.params)
     output = gen_s2n(com,output,verbose,wsgi_dir)
