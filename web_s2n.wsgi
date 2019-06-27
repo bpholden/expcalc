@@ -8,7 +8,7 @@ os.chdir(wsgi_dir)
 sys.path.append(wsgi_dir)
 
 import templates_filters
-from insts import inst
+from insts import Inst
 from s2n_param import gen_s2n, build_exec_str
 from csv_gen import csv_output
 
@@ -83,8 +83,8 @@ def esi():
 @route('/apf')
 def apf():
     
-    filters,fabbr = templates_filters.get_filters()
-    templates,tabbr = templates_filters.get_templates()
+    filters,fabbr = templates_filters.get_star_filters()
+    templates,tabbr = templates_filters.get_star_templates()
     output = template('make_apf_form',inst="apf",
                       filters = filters,
                       fabbr = fabbr,
