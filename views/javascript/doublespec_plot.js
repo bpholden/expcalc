@@ -5,6 +5,13 @@ function decide(exp) {
     }
 }
 
+function decide_prec(prec) {
+    $("#precdiv").hide();
+    if (prec !== null) {
+	$("#precdiv").show();
+    }
+}
+
 function plotoptions(chart,resp) {
     var markings = [];
     if(resp.dich == "d46") {
@@ -241,12 +248,27 @@ function showResponse(resp, statusText, xhr, $form)  {
 	    
         $("#ctstabdiv").hide(); // Once more, but with feeling
 	$("#expmeterdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="expmeter"></table>');
+	$("#precdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="prec"></table>');
 	decide(resp.exp);
+	decide_prec(resp.prec);
 	$("#expmeter").dataTable({
 	    "aoColumns" : [
 		{ "sTitle": "Exposure Meter" }
 	    ],
 	    "aaData" : resp.exp,
+	    "bPaginate" : false,
+	    "bFilter" : false,
+	    "bInfo" : false,
+	    "bSort" : false,
+	    "bLengthChange" : false,
+	    "bAutoWidth" : false
+	    
+	});
+	$("#prec").dataTable({
+	    "aoColumns" : [
+		{ "sTitle": "Precision" }
+	    ],
+	    "aaData" : resp.prec,
 	    "bPaginate" : false,
 	    "bFilter" : false,
 	    "bInfo" : false,
