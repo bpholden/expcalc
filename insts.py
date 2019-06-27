@@ -1,4 +1,4 @@
-class inst:
+class Inst:
     def __init__(self):
         self.com = ""
         self.paramregexp = dict()
@@ -73,9 +73,6 @@ class inst:
             self.paramregexp = dict(
                 mag = '\d+\.?\d*',
                 binning = '\dx\d',
-                #                spatialbinning = '\d',
-                #                spectralbinning = '\d',
-                #                slitwidth = '\d\.?\d*',
                 slitwidth = '\w',
                 exptime = '\d+\.?\d*',
                 seeing = '(\d\.?\d*|\.\d+)',
@@ -89,8 +86,6 @@ class inst:
             self.prettyparam = dict(
                 mag = 'Mag',
                 binning = 'CCD Binning',
-                #                spatialbinning = 'Binning in Spatial Pixels',
-                #                spectralbinning = 'Binning in Spectral Pixels',
                 slitwidth = 'Slitwidth',
                 exptime = 'Exp. time',
                 seeing = 'Seeing',
@@ -136,7 +131,6 @@ class inst:
                 cwave = '\d+\.?\d*',
                 binning = '\dx\d',
                 slitwidth = '\d+\.?\d*',
-                # slitlength = '\d+\.?\d*',
                 exptime = '\d+\.?\d*',
                 seeing = '(\d\.?\d*|\.\d+)',
                 airmass = '\d+\.?\d*',
@@ -152,7 +146,6 @@ class inst:
                 mag = 'Mag',
                 binning = 'CCD Binning',
                 slitwidth = 'Slitwidth',
-                #                        slitlength = 'Slitlength',
                 exptime = 'Exp. time',
                 seeing = 'Seeing',
                 airmass = 'Airmass',
