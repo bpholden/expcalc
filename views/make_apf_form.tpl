@@ -86,7 +86,7 @@
     <td>
     </td>
     <td><label class="fieldlabel">Seeing (arcsec):</label>
-      <input type="text" name="seeing" class="required number" id="form_seeing" value="1.2" size="4"/><br/>
+      <input type="text" name="seeing" class="required number" id="form_seeing" value="1.6" size="4"/><br/>
     </td>	
 	<td><label class="fieldlabel">Template</label>
 	  <select name="template" id="template" class="singleselect input-medium">
@@ -102,7 +102,7 @@
     <td>
     </td>
     <td><label class="fieldlabel">Airmass:</label>
-      <input type="text" name="airmass" class="required number" id="form_airmass" value="1.1" size="4"/><br/>
+      <input type="text" name="airmass" class="required number" id="form_airmass" value="1.4" size="4"/><br/>
     </td>	
        <td><label class="fieldlabel">Redshift:</label>
 	 <input type="text" name="redshift" class="required number" id="form_airmass" value="0.0" size="4"/><br/>
