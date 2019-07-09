@@ -20,17 +20,17 @@ def parse_return(output,idlout):
 
     lines = idlout.splitlines()
 
-    inline = 0
+    inline = False
     curkey = ''
     for line in lines:
         match = re.search('\A(\w+)\:',line)
         if match:
             if match.group(1) in output.keys():
                 curkey = match.group(1)
-                inline = 1
+                inline = True
                 output[curkey]= line.split()[1:]
             
-        elif inline == 1:
+        elif inline:
             output[curkey].extend(line.split())
 
 
