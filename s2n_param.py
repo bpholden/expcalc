@@ -108,7 +108,7 @@ def build_exec_str(com,paramregexp,prettyparam,params):
                   errormsg = '',
                   i2counts = None,
                   exp = None,
-
+                  precision = None
         )
 
 
