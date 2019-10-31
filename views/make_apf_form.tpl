@@ -75,8 +75,8 @@
 % end
       </select>
       <select name="mtype" id="mtype" class="singleselect input-mini">
-	<option value="1">Vega</option>
 	<option value="2">AB</option>
+	<option value="1">Vega</option>
       </select>
     </td>	
   </tr>
