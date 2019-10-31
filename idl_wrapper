@@ -13,8 +13,8 @@ dir=$(dirname $BASH_SOURCE[0])/..
 echo Getting XIDL environment
 . $dir/env-for-xidl
 echo tempdir $TEMPLATE_DIR
-echo filtdir $FILTER_DIR
+echo filterdir $FILTER_DIR
 echo idlpath $IDL_PATH
-echo input $@
+echo com $@
 # And exec idl:
 exec idl "$@"
