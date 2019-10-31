@@ -1,14 +1,15 @@
 function decide(exp) {
     $("#expmeterdiv").hide();
-    if (exp !== null) {
+    if (exp != null) {
 	$("#expmeterdiv").show();
     }
-}
-
-function decide_prec(prec) {
     $("#precdiv").hide();
-    if (prec !== null) {
+    if (exp != null) {
 	$("#precdiv").show();
+    }
+    $("#i2ctsdiv").hide();
+    if (exp != null) {
+	$("#i2ctsdiv").show();
     }
 }
 
@@ -71,11 +72,13 @@ function showRequest(formData, jqForm, options) {
     var queryString = $.param(formData); 
     //      alert("started here!");
     console.log('About to submit: \n\n' + queryString); 
-    hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview","#expmeterdiv"]);
+    hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview","#expmeterdiv","#precdiv","#i2ctsdiv"]);
     $("#bysy_indicator").show();
     
     return true; 
-}
+};
+
+
 
 // a whole lot of work happens in this function
 function showResponse(resp, statusText, xhr, $form)  { 
@@ -84,17 +87,19 @@ function showResponse(resp, statusText, xhr, $form)  {
     var smalldw = 1000;
     $("#bysy_indicator").hide();
     if (resp.errormsg) {
-        alert(resp.errormsg);
+        alert(resp.errormsg)
     } else {
         if (resp.msg) {
-	    alert(resp.msg);
+	    alert(resp.msg)
         }
-	if (resp.exp !== null) {
+	if (resp.exp != null) {
 	    var t = parseFloat(resp.exp);
 	    if ( t <= 0) {
 		resp.exp = null;
 	    } else {
 		resp.exp = [resp.exp];
+		resp.i2counts = [resp.i2counts];
+		resp.precision = [resp.precision];
 	    }
 	}
 	console.log(resp);
@@ -152,7 +157,7 @@ function showResponse(resp, statusText, xhr, $form)  {
             },
 	    series : [{ name : 's2n',
                         data : resp.s2n,
-                        color: 'rgba(223, 83, 83, .5)'
+                        color: 'rgba(223, 83, 83, .5)',
 		      }]
         });
 	// now we build the cts chart
@@ -177,7 +182,7 @@ function showResponse(resp, statusText, xhr, $form)  {
                 startOnTick: false,
                 endOnTick: false,
                 showLastLabel:true,
-                gridLineWidth: 1
+                gridLineWidth: 1,
             },
 	    yAxis: {
                 title: {
@@ -239,21 +244,21 @@ function showResponse(resp, statusText, xhr, $form)  {
 		{ "sTitle": "Obj (Cts)" },
 		{ "sTitle": "Sky (Cts)" },
 		{ "sTitle": "RN (Cts)" },
-		{ "sTitle": "S/N" }
+		{ "sTitle": "S/N" },
 	    ],
 	    "aaData" : resp.cts,
 	    "bPaginate" : false,
-	    "bFilter" : false
+	    "bFilter" : false,
 	});
 	    
         $("#ctstabdiv").hide(); // Once more, but with feeling
 	$("#expmeterdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="expmeter"></table>');
-	$("#precdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="prec"></table>');
+	$("#precdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="precision"></table>');
+	$("#i2ctsdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="i2cts"></table>');
 	decide(resp.exp);
-	decide_prec(resp.prec);
 	$("#expmeter").dataTable({
 	    "aoColumns" : [
-		{ "sTitle": "Exposure Meter" }
+		{ "sTitle": "Exposure Meter" },
 	    ],
 	    "aaData" : resp.exp,
 	    "bPaginate" : false,
@@ -261,25 +266,38 @@ function showResponse(resp, statusText, xhr, $form)  {
 	    "bInfo" : false,
 	    "bSort" : false,
 	    "bLengthChange" : false,
-	    "bAutoWidth" : false
+	    "bAutoWidth" : false,
 	    
 	});
-	$("#prec").dataTable({
+	$("#i2cts").dataTable({
 	    "aoColumns" : [
-		{ "sTitle": "Precision" }
+		{ "sTitle": "Median I2 Cnts per pix" },
 	    ],
-	    "aaData" : resp.prec,
+	    "aaData" : resp.i2counts,
 	    "bPaginate" : false,
 	    "bFilter" : false,
 	    "bInfo" : false,
 	    "bSort" : false,
 	    "bLengthChange" : false,
-	    "bAutoWidth" : false
+	    "bAutoWidth" : false,
 	    
 	});
-	showify(["#ctsbtn","#s2n","#ctstabbtn"]);
-    }
-}
+	$("#precision").dataTable({
+	    "aoColumns" : [
+		{ "sTitle": "Precision (m/s)" },
+	    ],
+	    "aaData" : resp.precision,
+	    "bPaginate" : false,
+	    "bFilter" : false,
+	    "bInfo" : false,
+	    "bSort" : false,
+	    "bLengthChange" : false,
+	    "bAutoWidth" : false,
+	    
+	});
+	showify(["#ctsbtn","#s2n","#ctstabbtn"])
+    };
+};
 
 $(document).ready(function(){
 
