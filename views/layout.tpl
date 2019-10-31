@@ -48,6 +48,7 @@
 <div class="row ">
   <div id="expmeterdiv" class="span2"></div>
   <div id="precdiv" class="span2"></div>
+  <div id="i2ctsdiv" class="span3"></div>
 </div>
 <div class="row ">
   <div   id="s2n" class="span11" style="width: 1000px"></div>
