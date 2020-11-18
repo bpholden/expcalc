@@ -3,10 +3,6 @@ function decide(exp) {
     if (exp != null) {
 	$("#expmeterdiv").show();
     }
-    $("#precdiv").hide();
-    if (exp != null) {
-	$("#precdiv").show();
-    }
     $("#i2ctsdiv").hide();
     if (exp != null) {
 	$("#i2ctsdiv").show();
@@ -72,7 +68,7 @@ function showRequest(formData, jqForm, options) {
     var queryString = $.param(formData); 
     //      alert("started here!");
     console.log('About to submit: \n\n' + queryString); 
-    hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview","#expmeterdiv","#precdiv","#i2ctsdiv"]);
+    hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview","#expmeterdiv","#i2ctsdiv"]);
     $("#bysy_indicator").show();
     
     return true; 
@@ -99,7 +95,6 @@ function showResponse(resp, statusText, xhr, $form)  {
 	    } else {
 		resp.exp = [resp.exp];
 		resp.i2counts = [resp.i2counts];
-		resp.precision = [resp.precision];
 	    }
 	}
 	console.log(resp);
@@ -253,7 +248,6 @@ function showResponse(resp, statusText, xhr, $form)  {
 	    
         $("#ctstabdiv").hide(); // Once more, but with feeling
 	$("#expmeterdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="expmeter"></table>');
-	$("#precdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="precision"></table>');
 	$("#i2ctsdiv").html('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="i2cts"></table>');
 	decide(resp.exp);
 	$("#expmeter").dataTable({
@@ -274,19 +268,6 @@ function showResponse(resp, statusText, xhr, $form)  {
 		{ "sTitle": "Median I2 Cnts per pix" },
 	    ],
 	    "aaData" : resp.i2counts,
-	    "bPaginate" : false,
-	    "bFilter" : false,
-	    "bInfo" : false,
-	    "bSort" : false,
-	    "bLengthChange" : false,
-	    "bAutoWidth" : false,
-	    
-	});
-	$("#precision").dataTable({
-	    "aoColumns" : [
-		{ "sTitle": "Precision (m/s)" },
-	    ],
-	    "aaData" : resp.precision,
 	    "bPaginate" : false,
 	    "bFilter" : false,
 	    "bInfo" : false,
