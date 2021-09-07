@@ -1,3 +1,4 @@
+from __future__ import print_function
 from bottle import route, run, debug, template, request, static_file, error, default_app, response
 import subprocess as sub
 import os, os.path, sys
@@ -127,11 +128,11 @@ def gen_inst_s2n():
 
     if devel:
         for k in request.params.keys():
-            print "gen_inst_s2n ",k, request.params[k]
+            print( "gen_inst_s2n ",k, request.params[k])
     com,output = build_exec_str(instr.com,instr.paramregexp,instr.prettyparam,request.params)
     if devel:
-        print "gen_inst_s2n ",com
-        print "gen_inst_s2n ",output
+        print( "gen_inst_s2n ",com)
+        print( "gen_inst_s2n ",output)
     if not output['msg']:
         output = gen_s2n(com,output,verbose,wsgi_dir)
 

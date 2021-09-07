@@ -1,3 +1,4 @@
+from __future__ import print_function
 import subprocess as sub
 import re
 import os, os.path
@@ -6,14 +7,14 @@ import os, os.path
 def bad_obj(objcts):
     bad = False
     nbad = 0
-    print objcts
+    print( objcts)
     for pair in objcts:
         wv,oc = pair
         if oc < 0:
             nbad += 1
         if nbad > 5:
             bad = True
-    print bad
+    print( bad)
     return bad
 
 def parse_return(output,idlout):
@@ -86,12 +87,8 @@ def paramandvals(param,paramval):
 
 def strip_badchar(com):
 
-    # really need to get rid of $, ; and ``
-
-    #    ncom,nvals = re.subn("(\$|\;|\`)","",com)
-    #    print com,
     ncom,nvals = re.subn("[^a-zA-Z0-9_/,'=.]","",com)
-    #    print ncom,nvals
+
     return ncom,nvals
 
 def build_exec_str(com,paramregexp,prettyparam,params):
@@ -141,22 +138,18 @@ def gen_s2n(com,output,verbose,wsgi_dir):
     output['com'] = com
     runargs = []
     runargs.append(os.path.join(wsgi_dir,'idl_wrapper') )
-    #    runargs.append("-e")
-    #    runargs.append( '"' + com + '"' )
     if verbose:
-        print "path:",os.path.join(wsgi_dir,'idl_wrapper')
-        print "com:",com
-        print "runargs:", runargs
+        print( "path:",os.path.join(wsgi_dir,'idl_wrapper'))
+        print( "com:",com)
+        print( "runargs:", runargs)
 
     try:
         p = sub.Popen(runargs,stdin=sub.PIPE,stdout=sub.PIPE,stderr=sub.PIPE)
         # we can rethink this now that we use idl_wrapper
         idlout,idlerr=p.communicate(com)
         if verbose:
-            print idlout
-            print idlerr
-            # print output
-            #    output['msg'] = idlerr
+            print( idlout)
+            print( idlerr)
         output = parse_return(output,idlout)
     except:
         output['msg'] = "Server side error, email holden@ucolick.org."

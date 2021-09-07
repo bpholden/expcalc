@@ -1,3 +1,4 @@
+from __future__ import print_function
 import re
 import math
 import os.path
@@ -30,7 +31,7 @@ class LConn():
         params = urllib.urlencode(indict)
 
         if debug:
-            print fullurl + params
+            print( fullurl + params)
 
         if not self.opener:
             self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
@@ -92,7 +93,7 @@ def lookup_template(options):
             template = templates[i]
 
     if options.debug:
-        print options.temp, template
+        print( options.temp, template)
     options.temp = template
 
 def ffilter(options):
@@ -156,8 +157,8 @@ else:
     lconn = LConn(host="etc.ucolick.org",port=80)
 retval,msg = lconn.calc_s2n(options)
 if msg:
-    print msg
+    print( msg)
     sys.exit()
 out= unwrap_output(retval)
 for line in out:
-    print line
+    print( line)

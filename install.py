@@ -1,3 +1,4 @@
+from __future__ import print_function
 import glob
 import os, os.path
 from optparse import OptionParser
@@ -6,12 +7,12 @@ def mkndir(path,verb=False):
     success = False
     if not os.path.exists(path):
         if verb:
-            print "Making ",path
+            print( "Making ",path)
         try:
             os.mkdir(path)
             success = True
         except Exception as e :
-            print "cannot make",path,e
+            print( "cannot make",path,e)
     else:
         success = True
         # we were successful at nothing!
@@ -24,16 +25,16 @@ def lnkfile(infile,outpath,verb=False):
 
     try:
         if verb:
-            print "linking",infile,outfile
+            print("linking",infile,outfile)
         if os.path.exists(outfile):
             if verb:
-                print outfile, "exists"
+                print( outfile, "exists")
                 os.remove(outfile)
                 os.link(infile,outfile)
         else:
             os.link(infile,outfile)
     except Exception as e:
-        print e
+        print( e)
         exit()
     return
 
@@ -62,7 +63,7 @@ try:
         # os.link(f,os.path.join(abspath,f))
         lnkfile(f,abspath,verb)
 except Exception as e :
-    print "cannot link",f,e
+    print( "cannot link",f,e)
     exit()
 
 viewdir = os.path.join(abspath,"views")
