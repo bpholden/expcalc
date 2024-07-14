@@ -4,14 +4,15 @@ import subprocess as sub
 import os, os.path, sys
 from optparse import OptionParser
 
-wsgi_dir = os.path.dirname(os.path.abspath(__file__))
-os.chdir(wsgi_dir)
-sys.path.append(wsgi_dir)
-
 import templates_filters
 from insts import Inst
 from s2n_param import gen_s2n, build_exec_str
 from csv_gen import csv_output
+
+wsgi_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(wsgi_dir)
+sys.path.append(wsgi_dir)
+
 
 parser = OptionParser()
 parser.add_option("-d", "--devel", dest="devel", default=False,
@@ -30,28 +31,28 @@ verbose = options.verbose
 
 @route('/lris')
 def lris():
-    
+
     filters,fabbr = templates_filters.get_filters()
     templates,tabbr = templates_filters.get_templates()
     output = template('make_lris_form',inst="lris",
                   filters = filters,
                   fabbr = fabbr,
                   tabbr = tabbr,
-                  templates = templates	      
+                  templates = templates
         )
     return output
 
 
 @route('/kast')
 def kast():
-    
+
     filters,fabbr = templates_filters.get_filters()
     templates,tabbr = templates_filters.get_templates()
     output = template('make_kast_form',inst="kast",
                   filters = filters,
                   fabbr = fabbr,
                   tabbr = tabbr,
-                  templates = templates	      
+                  templates = templates
         )
     return output
 
@@ -64,33 +65,33 @@ def deimos():
                       filters = filters,
                       fabbr = fabbr,
                       tabbr = tabbr,
-                      templates = templates	      
+                      templates = templates
         )
     return output
 
 @route('/esi')
 def esi():
-    
+
     filters,fabbr = templates_filters.get_filters()
     templates,tabbr = templates_filters.get_templates()
     output = template('make_esi_form',inst="esi",
                       filters = filters,
                       fabbr = fabbr,
                       tabbr = tabbr,
-                      templates = templates	      
+                      templates = templates
                       )
     return output
 
 @route('/apf')
 def apf():
-    
+
     filters,fabbr = templates_filters.get_star_filters()
     templates,tabbr = templates_filters.get_star_templates()
     output = template('make_apf_form',inst="apf",
                       filters = filters,
                       fabbr = fabbr,
                       tabbr = tabbr,
-                      templates = templates	      
+                      templates = templates
                       )
     return output
 
@@ -103,7 +104,7 @@ def testapf():
                       filters = filters,
                       fabbr = fabbr,
                       tabbr = tabbr,
-                      templates = templates	      
+                      templates = templates
                       )
     return output
 
@@ -208,7 +209,7 @@ debug(True)
 application = default_app()
 if devel:
     if local:
-         run(application, reloader=True,port=9020)
+        run(application, reloader=True,port=9020)
     else:
         hostname = os.getenv('HOSTNAME')
         run(application, reloader=True,port=9020,host=hostname)

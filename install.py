@@ -1,6 +1,6 @@
 from __future__ import print_function
 import glob
-import os, os.path
+import os
 from optparse import OptionParser
 
 def mkndir(path,verb=False):
@@ -83,11 +83,7 @@ for vd in viewdirlist:
         exit()
 
     gstr = abscd + "/*.*"
-    print gstr
     dfiles = glob.glob(gstr)
 
     for df in dfiles:
         lnkfile(df,absvd,verb)
-
-
-

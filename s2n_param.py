@@ -1,7 +1,7 @@
 from __future__ import print_function
 import subprocess as sub
 import re
-import os, os.path
+import os
 
 
 def bad_obj(objcts):
@@ -30,7 +30,7 @@ def parse_return(output,idlout):
                 curkey = match.group(1)
                 inline = 1
                 output[curkey]= line.split()[1:]
-            
+
         elif inline == 1:
             output[curkey].extend(line.split())
 
@@ -50,7 +50,7 @@ def parse_return(output,idlout):
             jtemp.append(float(output[key][i]))
         output[key] = temp
         output[jkey] = jtemp
-        
+
     nwave = []
     for wv in output['wave']:
         nwave.append(float(wv))
@@ -58,9 +58,9 @@ def parse_return(output,idlout):
 
     if bad_obj(output['obj']):
         output["errormsg"] = "The selected filter and template do not overlap. Please select another filter, another template, or redshift the template. "
-        
 
-    return(output)
+
+    return output
 
 def parse_request(value,regexp,name):
 
@@ -77,13 +77,13 @@ def parse_request(value,regexp,name):
 
 def paramandvals(param,paramval):
 
-    str=""
+    ret_str=""
     match = re.search("\A\d+\.?\d*\Z",paramval)
     if match:
-        str= "%s=%s," % (param,paramval)
+        ret_str= "%s=%s," % (param,paramval)
     else:
-        str= "%s='%s'," % (param,paramval)
-    return(str)
+        ret_str= "%s='%s'," % (param,paramval)
+    return ret_str
 
 def strip_badchar(com):
 
@@ -121,7 +121,7 @@ def build_exec_str(com,paramregexp,prettyparam,params):
             else:
                 com += paramandvals(param,paramval)
 
-            
+
     com = com.rstrip(',')
     return com,output
 
