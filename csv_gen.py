@@ -1,6 +1,9 @@
 import os
 import os.path
-from cStringIO import StringIO
+try:
+    from cStringIO import StringIO
+except:
+    from io import StringIO
 
 def csv_output(input):
     # this needs to reformat output into a csv file
