@@ -10,19 +10,19 @@ class Inst:
         if name == "kast" or name == "lris":
 
             self.paramregexp = dict(
-                dichroic = '(d|D)\d+',
-                grating = '\d+\/\d+',
-                grism = '\w\d+',
-                mag = '\d+\.?\d*',
-                binning = '\dx\d',
-                slitwidth = '\d\.?\d*',
-                exptime = '\d+\.?\d*',
-                seeing = '(\d\.?\d*|\.\d+)',
-                airmass = '\d\.?\d*',
-                ffilter = '\w+\.\w+',
-                template = '\w+\.\w+',
-                mtype = '\d',
-                redshift = '(\d\.?\d*|\.\d+)',
+                dichroic = r'(d|D)\d+',
+                grating = r'\d+\/\d+',
+                grism = r'\w\d+',
+                mag = r'\d+\.?\d*',
+                binning = r'\dx\d',
+                slitwidth = r'\d\.?\d*',
+                exptime = r'\d+\.?\d*',
+                seeing = r'(\d\.?\d*|\.\d+)',
+                airmass = r'\d\.?\d*',
+                ffilter = r'\w+\.\w+',
+                template = r'\w+\.\w+',
+                mtype = r'\d',
+                redshift = r'(\d\.?\d*|\.\d+)',
                 )
 
             self.prettyparam = dict(
@@ -44,16 +44,16 @@ class Inst:
         elif name == "esi":
 
             self.paramregexp = dict(
-                mag = '\d+\.?\d*',
-                binning = '\dx\d',
-                slitwidth = '\d\.?\d*',
-                exptime = '\d+\.?\d*',
-                seeing = '(\d\.?\d*|\.\d+)',
-                airmass = '\d+\.?\d*',
-                ffilter = '\w+\.\w+',
-                template = '\w+\.\w+',
-                mtype = '\d',
-                redshift = '(\d\.?\d*|\.\d+)',
+                mag = r'\d+\.?\d*',
+                binning = r'\dx\d',
+                slitwidth = r'\d\.?\d*',
+                exptime = r'\d+\.?\d*',
+                seeing = r'(\d\.?\d*|\.\d+)',
+                airmass = r'\d+\.?\d*',
+                ffilter = r'\w+\.\w+',
+                template = r'\w+\.\w+',
+                mtype = r'\d',
+                redshift = r'(\d\.?\d*|\.\d+)',
                 )
 
             self.prettyparam = dict(
@@ -71,16 +71,16 @@ class Inst:
         elif  name == "apf":
 
             self.paramregexp = dict(
-                mag = '\d+\.?\d*',
-                binning = '\dx\d',
-                slitwidth = '\w',
-                exptime = '\d+\.?\d*',
-                seeing = '(\d\.?\d*|\.\d+)',
-                airmass = '\d+\.?\d*',
-                ffilter = '\w+\.\w+',
-                template = '\w+\.\w+',
-                mtype = '\d',
-                redshift = '(\d\.?\d*|\.\d+)',
+                mag = r'\d+\.?\d*',
+                binning = r'\dx\d',
+                slitwidth = r'\w',
+                exptime = r'\d+\.?\d*',
+                seeing = r'(\d\.?\d*|\.\d+)',
+                airmass = r'\d+\.?\d*',
+                ffilter = r'\w+\.\w+',
+                template = r'\w+\.\w+',
+                mtype = r'\d',
+                redshift = r'(\d\.?\d*|\.\d+)',
                 )
 
             self.prettyparam = dict(
@@ -95,19 +95,19 @@ class Inst:
                 mtype = 'Mag. Type',
                 redshift = 'Redshift',
                 )
-            
+
         elif name == "hires":
             self.paramregexp = dict(
-                mag = '\d+\.?\d*',
-                binning = '\dx\d',
-                slitwidth = '\w\d',
-                exptime = '\d+\.?\d*',
-                seeing = '(\d\.?\d*|\.\d+)',
-                airmass = '\d+\.?\d*',
-                ffilter = '\w+\.\w+',
-                template = '\w+\.\w+',
-                mtype = '\d',
-                redshift = '(\d\.?\d*|\.\d+)',
+                mag = r'\d+\.?\d*',
+                binning = r'\dx\d',
+                slitwidth = r'\w\d',
+                exptime = r'\d+\.?\d*',
+                seeing = r'(\d\.?\d*|\.\d+)',
+                airmass = r'\d+\.?\d*',
+                ffilter = r'\w+\.\w+',
+                template = r'\w+\.\w+',
+                mtype = r'\d',
+                redshift = r'(\d\.?\d*|\.\d+)',
                 )
 
             self.prettyparam = dict(
@@ -122,22 +122,22 @@ class Inst:
                 mtype = 'Mag. Type',
                 redshift = 'Redshift',
                 )
-            
+
         elif name =="deimos":
 
             self.paramregexp = dict(
-                grating = '\d+\w',
-                mag = '\d+\.?\d*',
-                cwave = '\d+\.?\d*',
-                binning = '\dx\d',
-                slitwidth = '\d+\.?\d*',
-                exptime = '\d+\.?\d*',
-                seeing = '(\d\.?\d*|\.\d+)',
-                airmass = '\d+\.?\d*',
-                ffilter = '\w+\.\w+',
-                template = '\w+\.\w+',
-                mtype = '\d',
-                redshift = '(\d\.?\d*|\.\d+)',
+                grating = r'\d+\w',
+                mag = r'\d+\.?\d*',
+                cwave = r'\d+\.?\d*',
+                binning = r'\dx\d',
+                slitwidth = r'\d+\.?\d*',
+                exptime = r'\d+\.?\d*',
+                seeing = r'(\d\.?\d*|\.\d+)',
+                airmass = r'\d+\.?\d*',
+                ffilter = r'\w+\.\w+',
+                template = r'\w+\.\w+',
+                mtype = r'\d',
+                redshift = r'(\d\.?\d*|\.\d+)',
                 )
 
             self.prettyparam = dict(
@@ -156,7 +156,3 @@ class Inst:
                 )
 
         return self
-
-
-
-

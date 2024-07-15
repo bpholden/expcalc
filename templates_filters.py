@@ -30,7 +30,7 @@ def get_star_filters():
     return(filters,fabbr)
 
 def get_templates():
-    
+
     tabbr = ["flat","S0","E","Orion","PNe","Sa","Sb","Sc",
              "starburst1","QSO","SNe Type 1a 10 days",
              "O5V","B5V","A0V","A5V","F5V","G5V","K0V","K5V","M5V"
@@ -53,14 +53,14 @@ def get_templates():
         "F5V_pickles_16.fits",
         "G5V_pickles_27.fits",
         "K0V_pickles_32.fits",
-        "K5V_pickles_36.fits", 
+        "K5V_pickles_36.fits",
         "M5V_pickles_44.fits"
-        ]	      
+    ]
     return(templates,tabbr)
 
 
 def get_star_templates():
-    
+
     tabbr = [
              "G5V","K0V","K5V","M5V","O5V","B5V","A0V","A5V","F5V","SNe Type 1a 10 days"
              ]
@@ -75,5 +75,5 @@ def get_star_templates():
         "A5V_pickles_12.fits",
         "F5V_pickles_16.fits",
         "sn1a10d_template.fits"
-        ]	      
+    ]
     return(templates,tabbr)

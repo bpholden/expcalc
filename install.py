@@ -89,6 +89,3 @@ for vd in viewdirlist:
 
     for df in dfiles:
         lnkfile(df,absvd,verb)
-
-
-

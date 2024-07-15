@@ -31,8 +31,8 @@ class LConn():
 
         if not self.opener:
             self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
-            
-        try: 
+
+        try:
             res = self.opener.open(fullurl,params)
             retval = res.read()
         except urllib2.URLError as e:
@@ -54,7 +54,6 @@ class LConn():
 
     def calc_s2n(self,options):
 
-        
         indict = { 'mag': options.mag.strip("'"),
                    'template' : options.temp.strip("'"),
                    'seeing' : options.seeing.strip("'"),
@@ -67,8 +66,8 @@ class LConn():
                    'airmass' : options.airmass.strip("'"),
                    'exptime' : options.exptime.strip("'"),
                    }
-        sys =   options.sys.strip("'")
-        if sys == 'Vega':
+        mag_sys =  options.sys.strip("'")
+        if mag_sys == 'Vega':
             indict['mtype']=1
 
         self.binning_opts(indict)
@@ -77,8 +76,8 @@ class LConn():
             url = "/gen_inst_s2n"
         else:
             url = "/web_s2n/gen_inst_s2n"
-        retval,errmsg = self.post_url(url,indict,debug=options.debug)
-        return retval,errmsg
+        ret_val,errmsg = self.post_url(url,indict,debug=options.debug)
+        return ret_val,errmsg
 
 
 def lookup_template(options):
@@ -95,20 +94,20 @@ def lookup_template(options):
 def ffilter(options):
     options.ffilter = "sdss_%s.dat" % (options.ffilter)
 
-def unwrap_output(retval):
+def unwrap_output(ret_val):
 
-    output = json.loads(retval)
+    output = json.loads(ret_val)
     if 'msg' in output and output['msg']:
         outstr = output['msg']
         return outstr
-    out = ["# wave  s2n obj sky rn "]
+    out_vals = ["# wave  s2n obj sky rn "]
     for i in range(len(output['noise'])):
         outstr = "%.2f %.2f " % (output['s2n'][i][0],output['s2n'][i][1])
         outstr += "%.2f " % (output['obj'][i][1])
         outstr += "%.2f " % (output['sky'][i][1])
         outstr += "%.2f " % (output['noise'][i][1])
-        out.append(outstr)
-    return out
+        out_vals.append(outstr)
+    return out_vals
 
 
 parser = OptionParser()

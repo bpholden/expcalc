@@ -1,5 +1,4 @@
-import os
-import os.path
+
 try:
     from cStringIO import StringIO
 except:
@@ -32,7 +31,4 @@ def csv_output(input):
         tstr += "\n"
         csvfile.write(tstr)
 
-
-        
-    
     return csvfile.getvalue()
