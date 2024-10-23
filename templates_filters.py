@@ -9,15 +9,14 @@ def get_filters():
         "Buser_B.dat",
         "Buser_V.dat",
         "Cousins_R.dat",
-        "Cousins_I.dat",
-        "Gaia_G.dat"
-         ]
-    fabbr = ["r","g","i","u","z","B","V","R","I","G"]
+        "Cousins_I.dat"         ]
+    fabbr = ["r","g","i","u","z","B","V","R","I"]
     return(filters,fabbr)
 
 def get_star_filters():
     filters = [
         "Buser_V.dat",
+        "Gaia_G.dat",
         "Buser_B.dat",
         "sdss_r.dat",
         "sdss_g.dat",
@@ -25,10 +24,9 @@ def get_star_filters():
         "sdss_u.dat",
         "sdss_z.dat",
         "Cousins_R.dat",
-        "Cousins_I.dat",
-        "Gaia_G.dat"
+        "Cousins_I.dat"
          ]
-    fabbr = ["V","B","r","g","i","u","z","R","I","G"]
+    fabbr = ["V","G","B","r","g","i","u","z","R","I"]
     return(filters,fabbr)
 
 def get_templates():
