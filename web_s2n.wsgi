@@ -1,5 +1,4 @@
 from __future__ import print_function
-from __future__ import print_function
 from bottle import route, run, debug, template, request, static_file, error, default_app, response
 import os
 import sys
