@@ -41,24 +41,9 @@
 	<option value="O">8.0  by 8.0 arcsec Decker O</option>	  
       </select>
     </td>
-    <!-- <td><label>Binning:</label> -->
-    <!--   <select name="spatialbinning" class="singleselect span2" id="binning"> -->
-    <!-- 	<option value="1">1 spatial pix</option> -->
-    <!-- 	<option value="2">2 spatial pix</option> -->
-    <!-- 	<option value="3">3 spatial pix</option> -->
-    <!-- 	<option value="4">4 spatial pix</option> -->
-    <!--   </select> -->
-    <!--   <select name="spectralbinning" class="singleselect span2" id="binning"> -->
-    <!-- 	<option value="1">1 spectral pix</option> -->
-    <!-- 	<option value="2">2 spectral pix</option> -->
-    <!-- 	<option value="3">3 spectral pix</option> -->
-    <!-- 	<option value="4">4 spectral pix</option> -->
-    <!--   </select> -->
 	<td><label>Binning:</label> <select name="binning"
 	  class="singleselect input-medium" id="binning">
 	  <option value="1x1">1x1 pixels</option>
-	  <option value="2x2">2x2 pixels</option> 
-	  <option value="4x4">4x4 pixels</option>
 	  </select>
 	  <p> Spatial by spectral.</p>
 	</td>
