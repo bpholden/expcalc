@@ -25,7 +25,7 @@ def parse_return(output,idlout):
     inline = 0
     curkey = ''
     for line in lines:
-        match = re.search('\A(\w+)\:',line)
+        match = re.search(r'\A(\w+)\:',line)
         if match:
             if match.group(1) in output.keys():
                 curkey = match.group(1)
@@ -78,7 +78,7 @@ def parse_request(value,regexp,name):
 def paramandvals(param,paramval):
 
     ret_str=""
-    match = re.search("\A\d+\.?\d*\Z",paramval)
+    match = re.search(r"\A\d+\.?\d*\Z",paramval)
     if match:
         ret_str= "%s=%s," % (param,paramval)
     else:
