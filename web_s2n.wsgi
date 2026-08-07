@@ -5,13 +5,17 @@ import sys
 from optparse import OptionParser
 
 import templates_filters
-from insts import Inst
-from s2n_param import gen_s2n, build_exec_str
+from obscalc.webapi import calculate
 from csv_gen import csv_output
 
 wsgi_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(wsgi_dir)
 sys.path.append(wsgi_dir)
+
+# The forms offer galaxy and nebula templates (S0, E, Orion, PNe, Sa, Sb, Sc,
+# starburst1, K0III) that obscalc does not ship, so point it at our fuller
+# collection.  setdefault, so a deployment can still override it.
+os.environ.setdefault('OBSCALC_TEMPLATE_DIR', os.path.join(wsgi_dir,'Data','templates'))
 
 parser = OptionParser()
 parser.add_option("-d", "--devel", dest="devel", default=False,
@@ -97,18 +101,17 @@ def hires():
 
 @route('/gen_inst_s2n',method='ANY')
 def gen_inst_s2n():
-    instr = Inst()
-    instr = instr.make(request.params['inst'])
-
     if devel:
         for k in request.params.keys():
             print("gen_inst_s2n ",k, request.params[k])
-    com,output = build_exec_str(instr.com,instr.paramregexp,instr.prettyparam,request.params)
+
+    output = calculate(request.params)
+    # the plot draws a shaded band over the dichroic crossover, so echo back
+    # which one was asked for; obscalc does not report it.
+    output['dich'] = request.params.get('dichroic','')
+
     if devel:
-        print("gen_inst_s2n ",com)
-        print("gen_inst_s2n ",output)
-    if not output['msg']:
-        output = gen_s2n(com,output,verbose,wsgi_dir)
+        print("gen_inst_s2n ",output['msg'],output['errormsg'])
 
     return output
 
@@ -116,10 +119,7 @@ def gen_inst_s2n():
 @route('/tab_s2n',method='GET')
 def tab_s2n():
 
-    instr = Inst()
-    instr = instr.make(request.query.inst)
-    com,output = build_exec_str(instr.com,instr.paramregexp,instr.prettyparam,request.params)
-    output = gen_s2n(com,output,verbose,wsgi_dir)
+    output = calculate(request.params)
 
     #    return static_file(tfname, root=tfdir, download=tfname)
 
