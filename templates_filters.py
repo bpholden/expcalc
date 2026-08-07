@@ -31,11 +31,11 @@ def get_star_filters():
 
 def get_templates():
 
-    tabbr = ["flat","S0","E","Orion","PNe","Sa","Sb","Sc",
+    tabbr = ["S0","E","Orion","PNe","Sa","Sb","Sc",
              "starburst1","QSO","SNe Type 1a 10 days",
              "O5V","B5V","A0V","A5V","F5V","G5V","K0V","K5V","M5V","K0III"
              ]
-    templates = ["",
+    templates = [
         "s0_template.fits",
         "elliptical_template.fits",
         "orion_template.fits",
