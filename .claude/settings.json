@@ -5,7 +5,14 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:datatables.net)",
       "Bash(grep -nE -B1 \"\\\\\\\\\\\\$\\\\.browser\" bootstrap-modal.js)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"import obscalc, sys; print\\(' installed at', obscalc.__file__\\)\")",
+      "Bash(python3 -c \"import obscalc; print\\('  yes:', obscalc.__file__\\)\")",
+      "Bash(python web_s2n.wsgi -d -l)",
+      "Bash(curl -sf -o /dev/null http://127.0.0.1:9020/apf)",
+      "Bash(break)",
+      "Bash(kill %1)",
+      "Bash(git --no-pager diff -- web_s2n.wsgi)"
     ]
   }
 }
