@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:datatables.net)"
+      "WebFetch(domain:datatables.net)",
+      "Bash(grep -nE -B1 \"\\\\\\\\\\\\$\\\\.browser\" bootstrap-modal.js)"
     ]
   }
 }
