@@ -2,20 +2,15 @@ web_s2n.py
 
 Python requirements
 
-- bottle.py (0.10.7)
+- bottle.py (0.13.4)
   This is a stand alone python module.  It can be run under mod_wsgi.
   See http://bottlepy.org/docs/stable for details.
 
 - re 
-- subprocess (requires Python v2.4)
-
-
-IDL requirements (v6.3 through v8.1)
-http://www.ucolick.org/~xavier/IDL/xidl_install.html
-
-- IDLUTILS 
-- idlspec2d
-- XIDL 
+- obscalc (0.1.0)
+  This is a Python library that replicates the old IDL 
+  code that used to be run by the ETC.
+  See https://github.com/bpholden/obscalc
 
 Javascript requirements
 
