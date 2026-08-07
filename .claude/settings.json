@@ -12,7 +12,9 @@
       "Bash(curl -sf -o /dev/null http://127.0.0.1:9020/apf)",
       "Bash(break)",
       "Bash(kill %1)",
-      "Bash(git --no-pager diff -- web_s2n.wsgi)"
+      "Bash(git --no-pager diff -- web_s2n.wsgi)",
+      "Bash(curl -sS -o /dev/null -w \"  cdn.datatables.net -> HTTP %{http_code}\\\\n\" https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js)",
+      "Bash(awk '{print \"  size:\",$5,\"bytes\"}')"
     ]
   }
 }
