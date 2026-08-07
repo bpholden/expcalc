@@ -5,7 +5,6 @@
     <a class="brand" href="#">UCO/Lick Obs ETCs</a>
     <ul class="nav">
       <li class="active"><a href="#">Hires</a></li>
-      <li><a href="esi">ESI</a></li>
       <li><a href="kast">Kast</a></li>
       <li ><a href="lris">LRIS</a></li>
       <li><a href="deimos">DEIMOS</a></li>

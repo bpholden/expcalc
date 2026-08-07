@@ -8,7 +8,6 @@
       <li><a href="hires">Hires</a></li>
       <li><a href="kast">Kast</a></li>
       <li ><a href="lris">LRIS</a></li>
-      <li><a href="esi">ESI</a></li>
       <li><a href="apf">Levy on the APF</a></li>
     </ul>
   </div>
