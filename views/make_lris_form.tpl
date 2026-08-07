@@ -6,7 +6,6 @@
     <ul class="nav">
       <li class="active"><a href="#">LRIS</a></li>
       <li ><a href="kast">Kast</a></li>
-      <li><a href="esi">ESI</a></li>
       <li><a href="hires">Hires</a></li>
       <li><a href="deimos">DEIMOS</a></li>
       <li><a href="apf">Levy on the APF</a></li>
