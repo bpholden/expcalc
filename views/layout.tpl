@@ -27,7 +27,7 @@
 
 </head>
 <body>
-%include
+{{!base}}
 
 <div class="row">
   <div class="span2"  id="bysy_indicator">Computing ...</div>

@@ -1,4 +1,4 @@
-%rebase layout title='Levy on the APF Exposure Time Calculator'
+% rebase('layout', title='Levy on the APF Exposure Time Calculator')
 <div class="container">
 <div class="navbar">
   <div class="navbar-inner">

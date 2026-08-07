@@ -1,4 +1,4 @@
-%rebase layout title='ESI Exposure Time Calculator'
+% rebase('layout', title='ESI Exposure Time Calculator')
 <div class="container">
 <div class="navbar">
   <div class="navbar-inner">

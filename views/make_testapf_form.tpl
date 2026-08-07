@@ -1,4 +1,4 @@
-%rebase test_c3 title='Levy on the APF Exposure Time Calculator'
+% rebase('test_c3', title='Levy on the APF Exposure Time Calculator')
 <div class="container">
 <div class="navbar">
   <div class="navbar-inner">
