@@ -88,8 +88,8 @@ def apf():
 @route('/hires')
 def hires():
 
-    filters,fabbr = templates_filters.get_filters()
-    templates,tabbr = templates_filters.get_templates()
+    filters,fabbr = templates_filters.get_star_filters()
+    templates,tabbr = templates_filters.get_star_templates()
     output = template('make_hires_form',inst="hires",
                       filters = filters,
                       fabbr = fabbr,
