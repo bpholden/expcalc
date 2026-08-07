@@ -56,7 +56,7 @@ verb = options.verbose
 if not mkndir(abspath,verb):
     sys.exit()
 
-filelist = ["web_s2n.wsgi","idl_wrapper","env-for-xidl"]
+filelist = ["web_s2n.wsgi"]
 filelist += glob.glob("*.py")
 
 try:

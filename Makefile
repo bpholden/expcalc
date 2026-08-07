@@ -6,7 +6,7 @@ destdir = $(WSGIDIR)/wsgi-scripts
 
 srcdir = .
 
-SRC =  	insts.py s2n_param.py csv_gen.py templates_filters.py web_s2n.wsgi 
+SRC =  	csv_gen.py templates_filters.py web_s2n.wsgi
 
 VIEWS = views/layout.tpl \
 	views/make_apf_form.tpl \
