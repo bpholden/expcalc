@@ -40,8 +40,8 @@ class="form-stacked">
     </select></span>
   </td>
   <td><label>Slitwidth:</label> <select name="slitwidth" class="singleselect" id="slitwidth">
-      <option value="0.7">0.7 arcsec</option>
       <option value="1.0">1.0 arcsec</option>
+      <option value="0.7">0.7 arcsec</option>
       <option value="1.5">1.5 arcsec</option>
       </select>
   </td>
@@ -79,8 +79,8 @@ class="form-stacked">
 </tr>
 <tr class>
   <td><label>Grism:</label> <select name="grism" class="singleselect" id="grism">
-      <option value="B300">300/5000</option>
       <option value="B600">600/4000</option>
+      <option value="B300">300/5000</option>
       <!-- <option value="B400">400/3400</option> -->
       <!-- <option value="B1200">1200/3400</option> -->
     </select>
@@ -103,10 +103,10 @@ class="form-stacked">
 </tr>
 <tr class>
   <td><label>Grating: </label><select name="grating" class="singleselect" id="grating">
-    <option value="600/7500">600/7500</option>
-    <option value="600/10000">600/10000</option>
-    <option value="1200/9000">1200/9000</option>
     <option value="400/8500">400/8500</option>
+    <option value="600/10000">600/10000</option>
+    <option value="600/7500">600/7500</option>
+    <option value="1200/9000">1200/9000</option>    
     <option value="831/8200">831/8200</option></select>
   </td>
   <td>
