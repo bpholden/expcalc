@@ -63,9 +63,15 @@ function hidify(inarr) {
 }
 
 
-function showRequest(formData, jqForm, options) { 
+// serializes the form the same way jquery.form's formSerialize() did:
+// FormData collects exactly the "successful controls" (named, enabled,
+// checked) and URLSearchParams encodes them as name1=value1&name2=value2
+function serialize(form) {
+    return new URLSearchParams(new FormData(form));
+}
+
+function showRequest(queryString) {
     //       $(".btn").button({disabled: true})
-    var queryString = $.param(formData); 
     //      alert("started here!");
     console.log('About to submit: \n\n' + queryString); 
     hidify(["#cts","#s2n","#s2nbtn","#ctsbtn","#ctstabbtn","#ctstabdiv","#ctsoverview","#expmeterdiv","#i2ctsdiv"]);
@@ -77,7 +83,7 @@ function showRequest(formData, jqForm, options) {
 
 
 // a whole lot of work happens in this function
-function showResponse(resp, statusText, xhr, $form)  { 
+function showResponse(resp)  {
 	
     var bigdw = 2000;
     var smalldw = 1000;
@@ -284,14 +290,29 @@ $(document).ready(function(){
 
     $("#bysy_indicator").hide();
 
-    var options = {
-        target: "#divtabdownload",
-        dataType:     'JSON',
-        beforeSubmit: showRequest,
-        success:       showResponse 
-    } ;
-    $("#gen_s2n").ajaxForm(options);
-    // $("#gen_s2n").validate();
+    var form = document.getElementById("gen_s2n");
+
+    // submit the form over fetch() instead of jquery.form's ajaxForm().
+    // the URLSearchParams body makes fetch send application/x-www-form-urlencoded,
+    // which is the same encoding bottle's request.params already reads.
+    form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (showRequest(serialize(form).toString()) === false) {
+            return;
+        }
+        fetch(form.action, { method: "POST", body: serialize(form) })
+            .then(function (r) {
+                if (!r.ok) {
+                    throw new Error("server returned HTTP " + r.status);
+                }
+                return r.json();
+            })
+            .then(showResponse)
+            .catch(function (err) {
+                $("#bysy_indicator").hide();
+                alert("Calculation failed: " + err.message);
+            });
+    });
 
     hidify(["#ctsbtn","#ctstabbtn","#s2nbtn","#cvsbtn","#expmeterdiv"]);
 
@@ -311,7 +332,7 @@ $(document).ready(function(){
     });
 
     $("#tabdownloadbtn").click( function () {
-	var queryString = $('#gen_s2n').formSerialize();
+	var queryString = serialize(form).toString();
 	$("#divtabdownload").html('<iframe id="tabdownload" src="" style="display:none; visibility:hidden;"></iframe>')	;
 	var turl = "tab_s2n";
 	turl += "?" + queryString;
