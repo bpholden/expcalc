@@ -12,11 +12,6 @@ wsgi_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(wsgi_dir)
 sys.path.append(wsgi_dir)
 
-# The forms offer galaxy and nebula templates (S0, E, Orion, PNe, Sa, Sb, Sc,
-# starburst1, K0III) that obscalc does not ship, so point it at our fuller
-# collection.  setdefault, so a deployment can still override it.
-os.environ.setdefault('OBSCALC_TEMPLATE_DIR', os.path.join(wsgi_dir,'Data','templates'))
-
 parser = OptionParser()
 parser.add_option("-d", "--devel", dest="devel", default=False,
                   action="store_true",help="run using bottle's WSGI server")
