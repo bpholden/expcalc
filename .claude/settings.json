@@ -14,7 +14,12 @@
       "Bash(kill %1)",
       "Bash(git --no-pager diff -- web_s2n.wsgi)",
       "Bash(curl -sS -o /dev/null -w \"  cdn.datatables.net -> HTTP %{http_code}\\\\n\" https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js)",
-      "Bash(awk '{print \"  size:\",$5,\"bytes\"}')"
+      "Bash(awk '{print \"  size:\",$5,\"bytes\"}')",
+      "Bash(osascript -l JavaScript -e ' *)",
+      "Bash(curl -sS https://cdn.datatables.net/1.13.11/js/jquery.dataTables.min.js)",
+      "Bash(shasum -a 384)",
+      "Bash(awk '{print \"  local     sha384:\",$1}')",
+      "Bash(curl -sS https://registry.npmjs.org/datatables.net/1.13.11)"
     ]
   }
 }
