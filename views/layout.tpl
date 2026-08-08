@@ -3,7 +3,7 @@
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title>{{title}}</title>
-    <script type="text/javascript" src="javascript/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="javascript/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/highcharts.js"></script>

@@ -22,7 +22,7 @@ CSS = views/css/bootstrap-responsive.min.css \
 JS = views/javascript/bootstrap.min.js \
 	views/javascript/doublespec_plot.js \
 	views/javascript/highcharts.js \
-	views/javascript/jquery-1.12.4.min.js \
+	views/javascript/jquery-3.7.1.min.js \
 	views/javascript/jquery.dataTables.min.js
 
 install: install_src install_views install_css install_javascript
