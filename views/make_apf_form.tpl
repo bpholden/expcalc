@@ -118,7 +118,7 @@ name="submitbutton" value="Return csv table for exposure"/>
 <p>This tool calculates the expected counts and signal to noise for a
  point source using the APF spectrograph. The throughput measurements
  are from a 8 by 8 arcsecond aperture. The data are from September of
- 2015.</p>
+ 2022.</p>
 
 <p>The input spectrum is one of the templates normalized by the
  specified AB or Vega magnitude in the specified filter. A flat
