@@ -19,7 +19,10 @@
       "Bash(curl -sS https://cdn.datatables.net/1.13.11/js/jquery.dataTables.min.js)",
       "Bash(shasum -a 384)",
       "Bash(awk '{print \"  local     sha384:\",$1}')",
-      "Bash(curl -sS https://registry.npmjs.org/datatables.net/1.13.11)"
+      "Bash(curl -sS https://registry.npmjs.org/datatables.net/1.13.11)",
+      "Bash(curl -sS -o /private/tmp/claude-501/-Users-holden-src-expcalc/25e0721f-c627-46cd-b2aa-2c248dd76d78/scratchpad/jquery-3.7.1.min.js https://code.jquery.com/jquery-3.7.1.min.js)",
+      "Bash(curl -sS https://code.jquery.com/jquery-3.7.1.min.js)",
+      "Bash(shasum -a 256)"
     ]
   }
 }
