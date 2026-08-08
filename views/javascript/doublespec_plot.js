@@ -99,8 +99,11 @@ function showResponse(resp)  {
 	    if ( t <= 0) {
 		resp.exp = null;
 	    } else {
-		resp.exp = [resp.exp];
-		resp.i2counts = [resp.i2counts];
+		// dataTable wants an array of rows, each row an array of cells.
+		// obscalc returns these two as plain numbers (the IDL wrapper
+		// returned a list), so wrap twice, not once.
+		resp.exp = [[resp.exp]];
+		resp.i2counts = [[resp.i2counts]];
 	    }
 	}
 	console.log(resp);

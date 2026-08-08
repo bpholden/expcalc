@@ -105,13 +105,13 @@ name="submitbutton" value="Return csv table for exposure"/>
 <div class="row">
   <div class="span1">
 <a class="btn btn-info" data-backdrop="true" data-keyboard="true"
-    data-controls-modal="dialog">Help</a>
+    data-toggle="modal" data-target="#dialog">Help</a>
     </div>
 </div>
 <p>
 <div class="modal hide" id="dialog">
 <div class="modal-header">
-  <a href="#" class="close">&times;</a>
+  <a href="#" class="close" data-dismiss="modal">&times;</a>
   <h3>Help</h3>
 </div>
 <div class="modal-body">
